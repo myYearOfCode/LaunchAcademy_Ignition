@@ -38,18 +38,16 @@ responses.each do |response|
     yes_count += 1
   end
 end
-puts(yes_count)
+puts("yes_count = #{yes_count}")
 
 # Output the number of responses that include the words "no" or "not"
 no_count = 0
-["no ", "not"].each do |searchTerm|
   responses.each do |response|
-    if response.downcase.include? searchTerm
+    if /\bno[t]?\b/.match(response)
       no_count += 1
     end
-  end
 end
-puts(no_count)
+puts("no_count = #{no_count}")
 
 # Output the alphabetized list of responses
 puts(responses.sort)
