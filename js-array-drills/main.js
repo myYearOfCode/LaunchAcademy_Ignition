@@ -66,6 +66,8 @@ let whichStudents = () => {
   return studentList
 }
 
+//Return the students who have an i in their names
+
 console.log(`The students who have an 'i' in their name are  ${whichStudents()}.`)
 
 //Return the teacher who has the given student in their room
