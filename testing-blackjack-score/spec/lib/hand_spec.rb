@@ -9,11 +9,9 @@ describe Hand do
   let(:aceLow) { Hand.new([Card.new("♦","A"), Card.new("♥","J"), Card.new("♥","J")]) }
   let(:twoAce) { Hand.new([Card.new("♦","A"), Card.new("♥","A")]) }
   let(:noAce) { Hand.new([Card.new("♦",5), Card.new("♥",4)]) }
-  describe "#calculate_hand" do
-    # We have included some example tests below. Change these once you get started!
 
+  describe "#calculate_hand" do
     it "passes" do
-      # Use the RSpec keyword `expect`, as it appears below, to test your assertions
       expect(hand.calculate_hand).to eq(20)
       expect(aceHigh.calculate_hand).to eq(21)
       expect(aceLow.calculate_hand).to eq(21)
@@ -21,9 +19,10 @@ describe Hand do
       expect(noAce.calculate_hand).to eq(9)
     end
 
-    # it "fails" do
-    #   expect(false).to eq true
-    # end
+    it "fails" do
+      # expect(false).to eq true
+      expect(hand.calculate_hand).not_to be_nil
+    end
 
     # Add your remaining tests here.
 
