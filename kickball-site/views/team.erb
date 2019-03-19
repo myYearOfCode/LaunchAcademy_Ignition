@@ -1,0 +1,12 @@
+<% @team_name = params["team_name"] %>
+<% @league.teams.each do |team| %>
+  <% if team.name == params["team_name"] then %>
+    <% @selected_team = team %>
+  <% end %>
+<% end %>
+<%= @selected_team.name %>
+<ul>
+<% @selected_team.players.each do |player| %>
+<li><%= "#{player.name}, #{player.player_data}" %> </li>
+<% end %>
+</ul>
