@@ -1,0 +1,7 @@
+<% @MAGICAL_CREATURES.each do |creature| %>
+  <div>
+    <% creature_object = MagicalCreature.new(creature[:name], creature[:ability], creature[:age]) %>
+
+    <a href = "/creatures/<%= creature_object.name %>" >Name: <%= creature_object.name %> </a>
+  </div>
+<% end %>

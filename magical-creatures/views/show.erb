@@ -1,0 +1,20 @@
+<%= puts "Creatures array = " + @MAGICAL_CREATURES.to_s %>
+<% input_creature = params["creature"] %>
+<%= puts "input creature = " + input_creature %>
+<% selected_creature = @MAGICAL_CREATURES.select {|creature| creature[:name] == params["creature"]}[0] %>
+
+<% selected_creature_object = MagicalCreature.new(selected_creature[:name], selected_creature[:ability], selected_creature[:age]) %>
+
+Name: <%= selected_creature_object.name %>
+<br />
+Ability: <%= selected_creature_object.magicalAbility %>
+<br />
+Age:
+<%= if selected_creature_object.age
+then
+  selected_creature_object.age
+else
+  "unknown"
+end %>
+<br />
+Ancient? <%= selected_creature_object.ancient? %>
