@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SLACKER NEWS</title>
+    <link rel="stylesheet" href="/stylesheets/foundation.css">
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+  </head>
+  <body>
+    <div class="foundation_nav">
+      <ul class="menu menu-hover-lines">
+          <li class="active">
+            <a href="/articles">
+              Home
+            </a>
+          </li>
+          <li><a href="/random">Random</a></li>
+          <li><a href="/articles/new">New</a></li>
+      </ul>
+    </div>
+    <%= yield %>
+
+    <script src="/javascripts/index.js"></script>
+  </body>
+</html>

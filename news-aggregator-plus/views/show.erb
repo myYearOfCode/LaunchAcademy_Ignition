@@ -1,0 +1,7 @@
+<% articles = CSV.readlines('articles.csv', headers: true) %>
+
+<% selected_article = articles.select {|article| article["id"] == params["id"]}[0] %>
+<% puts selected_article %>
+<h1 class="headline"><%= selected_article["title"] %></h1>
+<p><%= selected_article["description"] %>
+<a href="http://<%= selected_article["url"] %>" target="_blank"><%= selected_article["url"] %> </a></p>

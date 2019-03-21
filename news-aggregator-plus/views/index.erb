@@ -1,0 +1,17 @@
+
+<% require 'csv' %>
+<div class="header">
+<h1>SLACKER NEWS.</h1>
+<h3>read now or... we don't care.</h3>
+</div>
+<% articles = CSV.readlines('articles.csv', headers: true) %>
+<div class="content" id="content">
+  <% articles.each do |article| %>
+    <div class="article">
+    <h1 class="headline"><%= article["title"] %></h1>
+    <p><%= article["description"] %>
+    <a href="http://<%= article["url"] %>" target="_blank"><%= article["url"] %> </a></p>
+    </div>
+  <% end %>
+<div>
+<a href="/random">Random</a>
