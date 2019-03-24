@@ -1,0 +1,31 @@
+<% require 'pry' %>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Veggie Recipe Printer</title>
+</head>
+
+<body>
+  <h1><%= @name %></h1>
+
+  <ul>
+    <% output = []
+    @ingredients.each do |ingredient|
+     output.push('<li>' + ingredient + '</li>') end%>
+    <%= output.join("") %>
+  </ul>
+  <ol>
+    <% output = []
+    @directions.each do |direction|
+     output.push('<li>' + direction + '</li>') end%>
+    <%= output.join("") %>
+  </ol>
+
+  <% output = []
+  @reviews.each do |review|
+  output.push("<div> Username: "+review[:username]+" Rating: "+review[:rating].to_s+" Review: "+review[:review]+"</div>")
+  end%>
+  <%= output.join() %>
+</body>
+</html>
