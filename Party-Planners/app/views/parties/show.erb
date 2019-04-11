@@ -1,0 +1,30 @@
+<h1>Show</h1>
+<div>
+  <div>Name: <%= @party.name %></div>
+  <div>Description: <%= @party.description %></div>
+  <div>Location: <%= @party.location %></div>
+</div>
+
+<div>
+  <h2>Invited:</h2>
+  <% @party.friends.each do |friend| %>
+    <div>
+      <%= "#{friend.first_name} #{friend.last_name}" %>
+    </div>
+  <% end %>
+</div>
+<div>
+  <form method="post" action="/friends/invite">
+    <select name="friend_id">
+    <% @friends.each do |friend| %>
+      <div>
+        <option value=<%= friend.id %>>
+          <%= "#{friend.first_name} #{friend.last_name}" %>
+        </option>
+      </div>
+    <% end %>
+    </select>
+    <input type="hidden" name="party_id" value=<%=@party.id%>>
+    <input type="submit">
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<h1>new</h1>
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <div><%= error %></div>
+  <% end %>
+<% end %>
+<form action="/parties/new" method="post">
+  Name:
+  <input type="text" name="Name" value="<%= @party_name %>" />
+  Description:
+  <input type="text" name="Description" value="<%= @party_description %>" />
+  Location:
+  <input type="text" name="Location" value="<%= @party_location %>" />
+  <input type="submit" id="Submit" name="Submit"/>
+</form>

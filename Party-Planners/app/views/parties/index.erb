@@ -1,0 +1,13 @@
+<h1>Parties</h1>
+<strong>
+  <a href="/parties/new">Add New Party</a>
+</strong>
+<% @party_list.each do |party| %>
+
+  <div>
+    <a href=<%= "/parties/#{party.id}" %>>
+      <%= party.name %>
+    </a>
+  </div>
+
+<% end %>

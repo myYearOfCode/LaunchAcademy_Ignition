@@ -1,0 +1,7 @@
+<h1>friends</h1>
+<a href="/friends/new">Make a new friend</a>
+<% @friends.each do |friend| %>
+  <div>
+    <%= "#{friend.first_name} #{friend.last_name}" %>
+  </div>
+<% end %>
